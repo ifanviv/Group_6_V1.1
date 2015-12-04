@@ -1,0 +1,39 @@
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+/**
+ * Created by ifan on 04/12/2015.
+ */
+public class Player implements MouseListener{
+
+    private RevealAlgorithm revealAlgorithm;
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Tile t = (Tile) e.getSource();
+
+        revealAlgorithm = new RevealAlgorithm();
+        revealAlgorithm.floodFill(t.getXPosition(),t.getYPosition());
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+}
