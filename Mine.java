@@ -22,6 +22,10 @@ public class Mine extends Tile{
         if (getIsHidden())  {
             graphics.setColor(getColor());
         }
+        if (getIsDiffused() && getIsHidden())    {
+            Color diffusedTile = Color.yellow;
+            graphics.setColor(diffusedTile);
+        }
         if (!getIsHidden()) {
             mineColor = Color.green;
             graphics.setColor(mineColor);

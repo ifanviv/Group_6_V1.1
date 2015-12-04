@@ -31,6 +31,10 @@ public class Square extends Tile  {
         if (getIsHidden())  {
             graphics.setColor(getColor());
         }
+        if (getIsDiffused() && getIsHidden())    {
+            Color diffusedTile = Color.yellow;
+            graphics.setColor(diffusedTile);
+        }
         if (!getIsHidden()) {
             graphics.drawString(Integer.toString(getNumOfMinesAdjacent()), 15, 15);
             Color tileColor = Color.green;

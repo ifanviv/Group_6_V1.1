@@ -26,7 +26,7 @@ public class RevealAlgorithm {
     }
 
     public static Boolean revealCheckOne(int x, int y)   {
-        return (Board.getTile(x, y).getIsHidden()&& !Board.getTile(x, y).getIsMine());
+        return (Board.getTile(x, y).getIsHidden()&& !Board.getTile(x, y).getIsMine() && !Board.getTile(x, y).getIsDiffused());
     }
 
     public static Boolean revealCheckTwo(int x, int y)  {

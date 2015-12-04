@@ -7,14 +7,20 @@ import java.awt.event.MouseListener;
 public class Player implements MouseListener{
 
     private RevealAlgorithm revealAlgorithm;
+    private Diffuse diffuse;
 
 
     @Override
     public void mouseClicked(MouseEvent e) {
         Tile t = (Tile) e.getSource();
-
-        revealAlgorithm = new RevealAlgorithm();
-        revealAlgorithm.floodFill(t.getXPosition(),t.getYPosition());
+        if (e.getButton() == MouseEvent.BUTTON3)    {
+            diffuse = new Diffuse();
+            diffuse.toggleDiffuseState(t.getXPosition(),t.getYPosition());
+        }
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            revealAlgorithm = new RevealAlgorithm();
+            revealAlgorithm.floodFill(t.getXPosition(), t.getYPosition());
+        }
     }
 
     @Override
