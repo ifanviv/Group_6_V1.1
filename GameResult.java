@@ -9,6 +9,7 @@
 public class GameResult{
 	private boolean gameWon;
 	private boolean gameLost;
+	private boolean gameResult;
 
 	//if the game result is being handled in another class, pass to this:
 	/*public GameResult(boolean result){
@@ -16,13 +17,28 @@ public class GameResult{
 	}*/
 
 	//this method will handle whether won/lost, possibly animation (i'm thinking JOptionPane)
-	public void setGameResult(gameWon, gameLost){
+	public boolean setGameResult(boolean gameResult){
+		if (gameResult == true){
+			gameWon = true;
+		}
+		if (gameResult == false){
+			gameLost = true;
+		}
 
 	}
 
 	//this method will return the appropriate outcome
-	public boolean getGameResult{
-
+	public JOptionPane getGameResult(){
+		//return gameResult;
+		if (gameWon == true){
+			String won = "You Win!";
+			//JOptionPane.showMessageDialog(frame, won, "You Win!", JOptionPane.WARNING_MESSAGE);
+			return JOptionPane.showMessageDialog(frame, won, "You Win!", JOptionPane.WARNING_MESSAGE);
+		}
+		String loss = "You Lose!";
+		return JOptionPane.showMessageDialog(frame, loss, "You Lose!", JOptionPane.WARNING_MESSAGE);
+//		String won = "You Win!";
+//			JOptionPane.showMessageDialog(frame, won, "You Win!", JOptionPane.WARNING_MESSAGE);
 	}
 	
 }
