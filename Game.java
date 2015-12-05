@@ -17,8 +17,8 @@ import java.awt.FlowLayout;
  * on what settings they would like to use in the game.
  */
 public class Game{
-    private static final int FRAME_WIDTH = 900;
-    private static final int FRAME_HEIGHT = 600;
+    private static final int FRAME_WIDTH = 700;
+    private static final int FRAME_HEIGHT = 450;
     private boolean gameStarted = false;
     private JTextField nameTF;
     public final int TEXT_FIELD_WIDTH = 10;
@@ -31,6 +31,7 @@ public class Game{
         JFrame frame = new JFrame();
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(null);
         frame.setVisible(false);
             
         Scanner in = new Scanner(System.in);
@@ -45,6 +46,14 @@ public class Game{
 
         boolean gameStarted = isGameRunning(false);
         System.out.println("GAME IS IN PROGRESS: " + gameStarted);
+        GameWindow menu = new GameWindow();
+        menu.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        menu.setSize(400, 400);
+        menu.add(menu.getNameTF());
+        menu.add(menu.getNumOfTilesTF());
+        menu.add(menu.getNumOfMinesTF());
+        menu.add(menu.getConfirmJB());
+        menu.setVisible( true );
         do{
             System.out.print("Please enter name: ");
             name = in.nextLine();
@@ -84,17 +93,52 @@ public class Game{
 
         System.out.println("\n**NAME: " + playerName + "\n\n**CUSTOM GAME: " + selectedGameType + "\n\n**SIZE OF BOARD: " + totalBoardSize + " (" + boardSize +
                             "x" + boardSize + ")\n\n**NUMBER OF MINES: " + totalMines); // + "\n\n**TIME (work in progress **IGNORE**): " + time);
+        menu.setVisible(false);
         frame.setVisible(true);
+        Board b;
+        frame.add(b = new Board());
+        //b.setVisible();
+        //b.setBounds(0,0,0,0);
+        b.setSize(400,400);
+
+        frame.setResizable(false);
+        /*GameWindow menu = new GameWindow();
+        menu.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        menu.setSize(200, 200);
+        menu.add(menu.getNameTF());
+        menu.add(menu.getNumOfTilesTF());
+        menu.add(menu.getNumOfMinesTF());
+        menu.setVisible( true ); */
+
+        //while(isGameRunning(true)){
+         //   menu.setNameTF();
+        //}
+        //frame.add(b);
         frame.setTitle("Kablewie!");
         //String defaultSettings = "**GAME WILL BE PLAYED WITH DEFAULT SETTINGS**";
         String welcome = "**NAME: " + playerName + "\n**CUSTOM GAME: " + selectedGameType + "\n**TOTAL SIZE OF BOARD: " + totalBoardSize + " (" + boardSize +
                             "x" + boardSize + ")\n**NUMBER OF MINES: " + totalMines; //+ "\n**TIME (work in progress **IGNORE**): " + time;
-        JOptionPane.showMessageDialog(frame, welcome, "Welcome to Kablewie!", JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(frame, welcome, "Welcome to Kablewie!", JOptionPane.WARNING_MESSAGE);
         System.out.println("GAME IS IN PROGRESS: " + gameStarted);
-        do{
-            System.out.println(t.getTimeElapsed());
-        }while(isGameRunning(true));
-        gameStarted = isGameRunning(false);
+
+        //frame.add(Board b = new Board(););
+        //menu.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        //menu.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        //menu.setVisible( true ); 
+
+
+        //do{
+            //menu.getNameTF().setText(t.getTimeElapsed());
+        //}while(isGameRunning(true));
+        //do{
+        //    menu.getNameTF();
+        //}while(isGameRunning(true));
+
+        //Board b = new Board();
+        //do{
+        //    System.out.println(t.getTimeElapsed());
+        //}while(isGameRunning(true));
+        //gameStarted = isGameRunning(false);
 
     }
 }
