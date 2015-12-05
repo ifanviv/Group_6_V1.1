@@ -23,8 +23,8 @@ public class Counter {
 		m_TilesRemainingCount = sizeOfBoard - getReveleadTileCount();
 	}
 	
-	public static void decrementTilesRemainingCount(){
-		m_TilesRemainingCount --;
+	public static void decrementDiffuseCount(){
+		m_DiffusedCount --;
 	}
 	
 	public static void incrementDiffusedCount(){
