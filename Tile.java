@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 /**
  * Created by ifan on 03/12/2015.
  */
-public class Tile extends JPanel{
+public class Tile extends JButton{
 
     private int m_XPosition;
     private int m_YPosition;

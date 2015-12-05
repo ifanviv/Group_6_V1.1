@@ -15,6 +15,8 @@ public class Board extends JFrame {
     public Board() {
 
         setSize(800, 600);
+        setResizable(false);
+        Counter.setMineCount(numOfBombs);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         boardTile = new Tile[BOARD_SIZE][BOARD_SIZE];
         placeMines();

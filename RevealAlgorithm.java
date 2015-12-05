@@ -9,6 +9,9 @@ public class RevealAlgorithm {
             if (Board.getTile(x, y) != null)  {
                 if (revealCheckOne(x, y)) {
                     Board.getTile(x, y).setIsHidden(false);
+                    Board.getTile(x, y).setEnabled(false);
+                    Counter.incrementRevealedTileCount();
+                    System.out.println(Counter.getReveleadTileCount());
                     //Board.getTile(x, y).changeColorRed();
                     Board.getTile(x, y).repaint();
                     if (revealCheckTwo(x, y)) {
