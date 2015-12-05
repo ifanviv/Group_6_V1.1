@@ -18,7 +18,9 @@ public class Counter {
 	}
 	
 	public static void setTileRemainingCount(int numOfTiles){
-		m_TilesRemainingCount = numOfTiles;
+
+		int sizeOfBoard = numOfTiles * numOfTiles;
+		m_TilesRemainingCount = sizeOfBoard - getReveleadTileCount();
 	}
 	
 	public static void decrementTilesRemainingCount(){

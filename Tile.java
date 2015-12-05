@@ -20,6 +20,7 @@ public class Tile extends JButton{
         m_YPosition = yPos;
         m_IsHidden = isHidd;
         m_IsDiffused = isDiff;
+        setPreferredSize(new Dimension(100, 100));
     }
 
     public void setXPosition(int xPos){

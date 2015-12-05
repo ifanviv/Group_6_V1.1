@@ -20,16 +20,17 @@ public class Mine extends Tile{
     public void paintComponent(Graphics graphics)    {
         super.paintComponent(graphics);
         if (getIsHidden())  {
-            graphics.setColor(getColor());
+            //graphics.setColor(getColor());
         }
         if (getIsDiffused() && getIsHidden())    {
             Color diffusedTile = Color.yellow;
             graphics.setColor(diffusedTile);
+            graphics.fillRect(20,20,20,20);
         }
         if (!getIsHidden()) {
             mineColor = Color.green;
             graphics.setColor(mineColor);
         }
-        graphics.fillRect(20, 20, 20, 20);
+        //graphics.fillRect(0, 0 , 100, 100);
     }
 }

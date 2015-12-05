@@ -29,17 +29,18 @@ public class Square extends Tile  {
     public void paintComponent(Graphics graphics)    {
         super.paintComponent(graphics);
         if (getIsHidden())  {
-            graphics.setColor(getColor());
+            //graphics.setColor(getColor());
         }
         if (getIsDiffused() && getIsHidden())    {
             Color diffusedTile = Color.yellow;
             graphics.setColor(diffusedTile);
+            graphics.fillRect(20,20,20,20);
         }
         if (!getIsHidden()) {
             graphics.drawString(Integer.toString(getNumOfMinesAdjacent()), 15, 15);
-            Color tileColor = Color.green;
-            graphics.setColor(tileColor);
+            //Color tileColor = Color.green;
+            //graphics.setColor(tileColor);
         }
-        graphics.fillRect(20, 20, 20, 20);
+        //graphics.fillRect(0,0,100,100);
     }
 }
