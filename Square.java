@@ -37,9 +37,11 @@ public class Square extends Tile  {
             graphics.fillRect(20,20,20,20);
         }
         if (!getIsHidden()) {
-            graphics.drawString(Integer.toString(getNumOfMinesAdjacent()), 15, 15);
-            //Color tileColor = Color.green;
-            //graphics.setColor(tileColor);
+            if (getNumOfMinesAdjacent() != 0) {
+                graphics.drawString(Integer.toString(getNumOfMinesAdjacent()), 30, 30);
+                //Color tileColor = Color.green;
+                //graphics.setColor(tileColor);
+            }
         }
         //graphics.fillRect(0,0,100,100);
     }

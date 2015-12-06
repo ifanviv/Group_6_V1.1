@@ -11,6 +11,7 @@ public class RevealAlgorithm {
                     Board.getTile(x, y).setIsHidden(false);
                     Board.getTile(x, y).setEnabled(false);
                     Counter.incrementRevealedTileCount();
+                    Counter.setTileRemainingCount(Board.getBOARD_SIZE());
                     System.out.println(Counter.getReveleadTileCount());
                     //Board.getTile(x, y).changeColorRed();
                     Board.getTile(x, y).repaint();
@@ -35,5 +36,18 @@ public class RevealAlgorithm {
     public static Boolean revealCheckTwo(int x, int y)  {
         Square square = (Square) Board.getTile(x, y);
         return (square.getNumOfMinesAdjacent() == 0);
+    }
+    public void ifMine(int x, int y) {
+
+        Board.getTile(x, y).setIsHidden(false);
+        for (int i = 0; i < Board.getBOARD_SIZE(); i++) {
+            for (int j = 0; j < Board.getBOARD_SIZE(); j++)  {
+                if (Board.getTile(i, j).getIsMine())    {
+                    Board.getTile(i, j).setIsHidden(false);
+                    Board.getTile(i, j).setEnabled(false);
+                    Board.getTile(i, j).repaint();
+                }
+            }
+        }
     }
 }

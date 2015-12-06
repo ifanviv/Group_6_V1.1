@@ -20,6 +20,9 @@ public class Player implements MouseListener{
         if (e.getButton() == MouseEvent.BUTTON1) {
             revealAlgorithm = new RevealAlgorithm();
             revealAlgorithm.floodFill(t.getXPosition(), t.getYPosition());
+            if (t.getIsMine())  {
+                revealAlgorithm.ifMine(t.getXPosition(), t.getYPosition());
+            }
         }
     }
 
